@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAiN LANGuAGE</title>
+  <style>
+    body {
+        font-family: sans-serif;
+        font-size: 24px;
+        margin-top: 150px;
+        margin-bottom: 100px;
+        margin-left: 30vh;
+        margin-right: 30vh;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    .clicked {
+      transform: scale(5);
+      border-radius: 50%;
+    }
+
+    @media screen and (min-width: 480px) {
+  body {
+    margin-left: 10vw; 
+    margin-right: 10vw;
+  }
+}
+  </style>
+</head>
+
+<body>
+    <h2>Burning, Crushing, Stabbing: How Words Affect Pain
+</h2>
+    <p>
+        The pain showed up a few years ago — first slowly, then all at once. My right hip burned, my back ached. I went from running with my kids to not being able to walk down the block. I saw doctors, I did tests, I ranked the pain on a scale of one to 10, which felt like pulling a number — mine was seven — out of a hat. No illness or injury appeared, only the physical erosion from multiple pregnancies and age.<br />
+        Instead of a number, the pain seemed more like a failing dam against the rising flood of pain. Or something like that. It’s hard putting a feeling that’s abstract, yet all encompassing, into words. But, aside from often-ambiguous 1 to 10 pain scales, words are the main tools we have when people ask how we’re feeling. And what we say — to them and to ourselves — matters: Several studies suggest that the words we use when talking about pain can make us feel it more keenly or take the edge off.<br />
+        Consider cursing. Whether you’ve slammed your finger in the door or stepped on a stray LEGO, a choice profanity can provide a colorful form of pain relief. In a 2020 study, British scientists found that using real swear words was more of an analgesic than fake ones (like “fouch” and “twizpipe”) or a neutral word, though their effects wear off with overuse.<br />
+        There are no magic words to make pain disappear, but pain experts say that paying attention to the words we use for pain might help shape how we experience it.<br />
+        
+        Changing languages changes pain.<br />
+        Swearing seems limited when it comes to fighting long-term pain. But then, so is English. There are so few words — hurt, ache, sore — that describe pain directly. Other languages often have words and ideas that capture something more clearly than our own — like weltschmerz, German for a kind of world-weariness, or wabi-sabi, an acceptance of imperfection in Japanese. Could other languages help with pain, too?
+
+For some, switching languages while in pain could be mildly anesthetic. A study of Spanish-English bilinguals found that people felt pain less strongly when they spoke the language tied to their less-dominant culture. Those who speak more than one language could consider their pain through their other cultural and linguistic lenses to see if a different perspective helps.
+
+Yet translating pain can leave even polyglots feeling misunderstood. Physiotherapist and neuroscientist Saurab Sharma and his colleagues compared how people in Nepal and in the U.S. described chronic pain. They found that people in the two countries shared few words around pain. Nepali speakers rarely used expressions like “sharp” or “throbbing,” which are common in English.
+
+
+    </p>
+
+  <script>
+    let heading = document.querySelector('p');
+
+    let innerContents = heading.innerText;
+    let allCharacters = innerContents.split('');
+
+    let newHeadingText = '';
+
+    for (let i = 0; i < allCharacters.length; i++) {
+      let currentChar = allCharacters[i];
+
+      if (currentChar === ' ') {
+        currentChar = '&nbsp;';
+      }
+
+      let wrapped = '<span>' + currentChar + '</span>';
+
+      newHeadingText = newHeadingText + wrapped;
+    }
+
+    heading.innerHTML = newHeadingText;
+
+    //~~~~~~~~some funky stuff with clicking~~~~~~~~~`~~~~~
+
+    let spans = document.querySelectorAll('span');
+
+    for (let i = 0; i < spans.length; i++) {
+      let currentSpan = spans[i];
+
+      currentSpan.addEventListener('mouseenter', () => {
+        // Check if the sequence of spans corresponds to the word "pain"
+        if (checkWordAtIndex(spans, i, "pain")) {
+          let imageSrc = './images/PainAuChocolat.png';
+          let image = new Image();
+          image.src = imageSrc;
+
+          let aspectRatio = image.width / image.height;
+
+          //resize image proportionally bigger
+          image.width = currentSpan.clientWidth * 7;
+          image.height = image.width / aspectRatio;
+
+          image.classList.add('clicked');
+          currentSpan.innerHTML = '';
+          currentSpan.appendChild(image);
+
+          // Set a timeout to revert back to text after 5 seconds
+          setTimeout(() => {
+            currentSpan.innerHTML = currentSpan.innerText;
+            image.classList.remove('clicked');
+          }, 5000);
+        }
+      });
+    }
+
+    // Function to check if the sequence of spans corresponds to a specific word
+    function checkWordAtIndex(spans, index, word) {
+      for (let j = 0; j < word.length; j++) {
+        if (spans[index + j] && spans[index + j].innerText.toLowerCase() !== word[j]) {
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

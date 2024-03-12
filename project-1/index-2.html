@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>LIFE is PAiN</title>
+  <style>
+    html {
+      cursor: url("./images/resize.png"), auto;
+      /* cursor:move; */
+    }
+
+    body {
+      cursor: url("./images/resize.png"), auto;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+      background-color: #ffffff;
+      font-family: "Comic Neue", cursive;
+      font-weight: 700;
+      font-style: normal;
+      color: black;
+      font-size: 72px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+
+    }
+
+    img {
+      max-width: absolute;
+      image-orientation: flex;
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      /* Hide the image by default */
+    }
+    
+  </style>
+</head>
+
+<body>
+  
+  <h1 class="heading">LIFE is PAaiN</h1>
+  <!-- <div class="arrow"><img src="image/arrow.png"></div> -->
+
+  <img src="images/wall.png" class="img1"></img>
+  <img src="images/PainAuChocolat.png" class="img2"></img>
+
+
+  <script>
+    function applyHoverEffect() {
+      var img = document.querySelector('.img1, .img2');
+      img.style.width = '1080px';
+      img.style.height = '1080px';
+      img.style.display = 'none'; 
+    }
+
+    // hover
+    window.addEventListener('load', applyHoverEffect);
+
+    window.addEventListener('resize', function () {
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+
+      var heading = document.querySelector('.heading');
+      var img = document.querySelector('.img1' || '.img2');
+
+      if (windowWidth > 1200 || windowHeight > 1080) {
+        heading.textContent = 'LIFE is PAaiN';
+        img.style.display = 'none'; // Hide the image
+      } else {
+        heading.textContent = '';
+        img.style.display = 'block'; // Show the image
+      }
+    });
+  </script>
+</body>
+
+</html>
