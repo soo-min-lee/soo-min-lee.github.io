@@ -3,18 +3,24 @@ html {
 }
 body {
   font-family: "Comic Neue", cursive;
-  font-weight: 400;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 29px;
   padding: 0;
   margin: 0;
   background: white;
   margin-top: 0; /* Add this line to remove top margin */
 
 }
+
+h1 {
+  width: 1000px;
+  text-align: center;
+  margin: 100px auto 20px auto;
+}
 .intro{
-  display: inline-block;
   writing-mode: sideways-lr;
-  padding: 10px;
+  margin: 5px auto 5px auto;
+  padding: 0px;
   /* background-color: gray;  */
 }
 
@@ -55,14 +61,14 @@ body {
 .a2 {
   background-image: url("./images/wall.png")
 }
-/* .a3 {
-  background-image: url("./images/lemon.png");
-} */
-p {
+.a3 {
+  background-image: url("./images/nytt.png");
+}
+/* p {
   font-family: "Comic Neue", cursive;
   font-weight: 300;
   font-style: normal;
-}
+} */
 .text {
   position: absolute;
   bottom: 0;
@@ -72,11 +78,7 @@ p {
 .box:hover .text{
   opacity:1;
 }
-h1 {
-  width: 1000px;
-  text-align: center;
-  margin: 100px auto 20px auto;
-}
+
 @media screen and (max-width: 800px){
   body{
       margin: 0;
