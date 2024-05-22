@@ -8,77 +8,92 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Soo Min uses Web As Medium</title>
     <style>
         body {
-            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(199, 98%, 48%, 1)'/><path d='M0 0h10v10H0z'  stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z'  stroke-width='1' stroke='none' fill='hsla(43, 39%, 46%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-
-
+            background-color: #D0FE03;
             width: 100vw;
-            height: 100vh;             /* Make sure body takes full height */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-
             font-family: "Space Grotesk", sans-serif;
             color: black;
-            font-optical-sizing: auto;
             font-weight: 300;
-            font-size: 24pt;
-            font-style: normal;
+            font-size: 36pt;
             text-align: center;
         }
 
-
-        * {
-            box-sizing: border-box;
-        }
-
         .top {
-            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(16) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(199, 98%, 48%, 1)'/><path d='M0 0h10v10H0z'  stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z'  stroke-width='1' stroke='none' fill='hsla(43, 39%, 46%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+            background-color: #D0FE03;
             padding: 10px;
             width: 100%;
             position: fixed;
-            top: 10px;
-            /* Stick to the top of the viewport */
+            top: 0;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hana,
+        .dul,
+        .set {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .hana {
-            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(199, 98%, 48%, 1)'/><path d='M0 0h10v10H0z'  stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z'  stroke-width='1' stroke='none' fill='hsla(43, 39%, 46%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-            float: left;
-            width: 33%;
-            padding: 180px;
-            margin-top: 0px;
-            overflow: hidden;
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(199, 98%, 48%, 1)'/><path d='M0 0h10v10H0z' stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z' stroke-width='1' stroke='none' fill='hsla(43, 39%, 46%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
         }
 
         .dul {
-            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(16) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(43, 39%, 46%, 1)'/><path d='M0 0h10v10H0z'  stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z'  stroke-width='1' stroke='none' fill='hsla(199, 98%, 48%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(-96,-80)' fill='url(%23a)'/></svg>");
-            width: 33%;
-            padding: 180px;
-            margin-top: 0px;
-            overflow: hidden;
-
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(43, 39%, 46%, 1)'/><path d='M0 0h10v10H0z' stroke-width='1' stroke='none' fill='hsla(199, 98%, 48%, 1)'/><path d='M10 10h10v10H10z' stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(-96,-80)' fill='url(%23a)'/></svg>");
         }
 
         .set {
-            background-color: #D0FE03;
-            width: 33%;
-            padding: 180px;
-            margin-top: 0px;
-            overflow: hidden;
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(199, 98%, 48%, 1)'/><path d='M0 0h10v10H0z' stroke-width='1' stroke='none' fill='hsla(71, 99%, 50%, 1)'/><path d='M10 10h10v10H10z' stroke-width='1' stroke='none' fill='hsla(43, 39%, 46%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+        }
+
+        .net {
+            background-color: hsla(43, 39%, 46%, 1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
         }
     </style>
 </head>
 
 <body>
     <div class="top">
-        <h6>Soo Min <i>uses</i> Web as Medium ↯↯↯</h6>
+        <h6>Soo Min <i>uses</i> Web as Medium</h6>
     </div>
-    <div class="hana"><a href="project-1/index.html">Responsive System</a></div>
-    <div class="dul"><a href="project-2/index.html">Interaction—Friction</a></div>
-    <div class="set"><a href="project-3/index.html">Open Project</a></div>
-
+    <div class="content">
+        <div class="hana"><a href="projects/p1-responsive-system/index.html">Responsive System</a></div>
+        <div class="dul"><a href="projects/p2-interaction-friction/index.html">Interaction—Friction</a></div>
+        <div class="set"><a href="projects/p3-open-project/index.html">Open Project</a></div>
+    </div>
+    <div class="net"><a
+            href="https://docs.google.com/presentation/d/1mvcwavDDSCqeqlTBYnoEpR6MkEMzU7F20LNr46JAGto/edit?usp=sharing">Web
+            as Canvas</a></div>
 </body>
 
 </html>

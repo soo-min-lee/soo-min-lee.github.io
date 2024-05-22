@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <title>PAiN LANGuAGE</title>
+    <style>
+        body {
+            font-family: "Comic Neue", cursive;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 200px;
+            margin-bottom: 100px;
+        }
+
+        .fixed-m {
+            font-family: "Comic Neue", cursive;
+            font-weight: 700;
+            font-size: 16px;
+            display:flex;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0px;
+            animation: blink 1.0s infinite;
+            animation-fill-mode: both;
+
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        .nyt {
+            display: block;
+            margin: 0 auto;
+            max-width: 45%;
+            height: auto;
+        }
+
+        @media screen and (min-width: 480px) {
+            body {
+                margin-left: 25vw;
+                margin-right: 25vw;
+            }
+        }
+
+        @keyframes blink {
+            0% { opacity: 0 };
+            50% { opacity: 1 };
+            100% { opacity: 0 };
+        }
+    </style>
+</head>
+
+<body>
+    <h6 class="fixed-m">Find the word "pain" and hover over it</h6>
+
+    <h2>Burning, Crushing, Stabbing: How Words Affect Pain</h2>
+    <h6>Nov. 9, 2021 <br>
+        By Cameron Walker
+    </h6>
+    <img class="nyt" src="./images/nyt.png"></img>
+
+    <p>
+        The pain showed up a few years ago — first slowly, then all at once. My right hip burned, my back ached. I went
+        from running with my kids to not being able to walk down the block. I saw doctors, I did tests, I ranked the
+        pain on a scale of one to 10, which felt like pulling a number — mine was seven — out of a hat. No illness or
+        injury appeared, only the physical erosion from multiple pregnancies and age.
+        <br>
+        <br>
+
+        Instead of a number, the pain seemed more like a failing dam against the rising flood of pain. Or something like
+        that. It’s hard putting a feeling that’s abstract, yet all encompassing, into words. But, aside from
+        often-ambiguous 1 to 10 pain scales, words are the main tools we have when people ask how we’re feeling. And
+        what we say — to them and to ourselves — matters: Several studies suggest that the words we use when talking
+        about pain can make us feel it more keenly or take the edge off.
+        <br>
+        <br>
+        Consider cursing. Whether you’ve slammed your finger in the door or stepped on a stray LEGO, a choice profanity
+        can provide a colorful form of pain relief. In a 2020 study, British scientists found that using real swear
+        words was more of an analgesic than fake ones (like “fouch” and “twizpipe”) or a neutral word, though their
+        effects wear off with overuse.
+        <br>
+        <br>
+        There are no magic words to make pain disappear, but pain experts say that paying attention to the words we use
+        for pain might help shape how we experience it.
+    </p>
+
+    <script>
+        document.querySelectorAll('p').forEach(paragraph => {
+            paragraph.innerHTML = paragraph.innerHTML.replace(/pain/g, '<span class="pain">pain</span>');
+        });
+
+        document.querySelectorAll('.pain').forEach(span => {
+            span.addEventListener('mouseenter', () => {
+                let imageSrc = './images/PainAuChocolat.png';
+                let image = new Image();
+                image.src = imageSrc;
+
+                let aspectRatio = image.width / image.height;
+
+                // Resize image proportionally bigger
+                image.width = span.clientWidth * 2;
+                image.height = image.width / aspectRatio;
+
+                image.classList.add('clicked');
+                span.innerHTML = '';
+                span.appendChild(image);
+
+                // back to text after 5 seconds
+                setTimeout(() => {
+                    span.innerHTML = 'pain';
+                    image.classList.remove('clicked');
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+
+</html>

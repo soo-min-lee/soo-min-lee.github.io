@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>LIFE is PAiN</title>
+  <style>
+    html {
+      cursor: url("./images/resize.png"), auto;
+    }
+
+    body {
+      cursor: url("./images/resize.png"), auto;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+      background-color: #ffffff;
+      font-family: "Comic Neue", cursive;
+      font-weight: 700;
+      font-style: normal;
+      color: black;
+      font-size: 72px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+
+    }
+
+    .fixed-l {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px;
+      font-family: "Comic Neue", cursive;
+      font-weight: 700;
+      font-style: normal;
+      color: black;
+      font-size: 20px;
+      display: inline-block;
+        background: white;
+        animation: blink 1.0s infinite;
+            animation-fill-mode: both;
+    }
+
+    .fixed-m {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px;
+      font-family: "Comic Neue", cursive;
+      font-weight: 700;
+      font-style: normal;
+      color: black;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: absolute;
+      image-orientation: flex;
+      height: 100vh;
+      width: 100vw;
+      display: none;
+    }
+
+    @keyframes blink {
+            0% { opacity: 0 };
+            50% { opacity: 1 };
+            100% { opacity: 0 };
+        }
+  </style>
+</head>
+
+<body>
+
+  <p class="fixed-l">Resize the window to shrink your pain</p>
+  <p class="fixed-m">The Only PAaiN I want is...</p>
+  <h1 class="heading">LIFE is PAaiN</h1>
+
+  <img src="images/wall.png" class="img1"></img>
+  <img src="images/PainAuChocolat.png" class="img2"></img>
+
+  <script>
+    function applyHoverEffect() {
+      var img = document.querySelector('.img1, .img2');
+      img.style.width = '1080px';
+      img.style.height = '1080px';
+      img.style.display = 'none';
+    }
+
+    window.addEventListener('load', applyHoverEffect);
+
+    window.addEventListener('resize', function () {
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+
+      var heading = document.querySelector('.heading');
+      var img = document.querySelector('.img2');
+
+      if (windowWidth > 1200 || windowHeight > 1080) {
+        heading.textContent = 'LIFE is PAaiN';
+        img.style.display = 'none';
+      } else {
+        heading.textContent = '';
+        img.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+
+</html>
